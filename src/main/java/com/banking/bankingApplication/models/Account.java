@@ -1,10 +1,11 @@
+/* (C)2021 */
 package com.banking.bankingApplication.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class Account {
@@ -12,6 +13,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String acnumber;
+
     private String custid;
     private String bid;
     private int opening_balance;
@@ -19,9 +21,16 @@ public class Account {
     private String atype;
     private String astatus;
 
-    public Account(){}
+    public Account() {}
 
-    public Account(String acnumber, String custid, String bid, int opening_balance, Date aod, String atype, String astatus) {
+    public Account(
+            String acnumber,
+            String custid,
+            String bid,
+            int opening_balance,
+            Date aod,
+            String atype,
+            String astatus) {
         this.acnumber = acnumber;
         this.custid = custid;
         this.bid = bid;
