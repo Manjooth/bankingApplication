@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts</title>
+</head>
+<body>
+    <h1 align="center">Welcome to the banking application</h1>
+    <h2 align="center">Accounts</h2>
+    <div align="center">
+        <a th:href="home">Home</a>
+        <a th:href="customers">Customers</a>
+    </div>
+    <br /> <br /> <br /> <br />
+    <div align="center">
+        <table cellpadding="18px" border="3px">
+            <thead>
+            <th>Customer Id</th>
+            <th>Branch Id</th>
+            <th>Opening Balance</th>
+            <th>Account Opening Date</th>
+            <th>Account Type</th>
+            <th>Account Status</th>
+            </thead>
+            <tbody>
+            <tr th:each="account : ${accounts}" align="center">
+                <td th:text="${account.custid}"></td>
+                <td th:text="${account.bid}"></td>
+                <td th:text="${account.opening_balance}"></td>
+                <td th:text="${account.aod}"></td>
+                <td th:text="${account.atype}"></td>
+                <td th:text="${account.astatus}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

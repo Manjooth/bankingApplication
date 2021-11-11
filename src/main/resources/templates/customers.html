@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+</head>
+<body>
+    <h1 align="center">Welcome to the banking application</h1>
+    <h2 align="center">Customers</h2>
+    <div align="center">
+        <a href="home">Home</a>
+        <a href="accounts">Accounts</a>
+    </div>
+    <br /> <br /> <br /> <br />
+    <div align="center">
+        <table cellpadding="18px" border="3px">
+            <thead>
+                <th>Customer Id</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Date of birth</th>
+                <th>City</th>
+                <th>Mobile</th>
+                <th>Occupation</th>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${customers}" align="center">
+                    <td th:text="${customer.custid}"></td>
+                    <td th:text="${customer.fname}"></td>
+                    <td th:text="${customer.mname}"></td>
+                    <td th:text="${customer.ltname}"></td>
+                    <td th:text="${customer.dob}"></td>
+                    <td th:text="${customer.city}"></td>
+                    <td th:text="${customer.mobileno}"></td>
+                    <td th:text="${customer.occupation}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
